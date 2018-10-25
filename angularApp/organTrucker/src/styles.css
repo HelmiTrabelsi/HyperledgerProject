@@ -1,0 +1,86 @@
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+.ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }
+
+  .table-striped>tbody>tr:nth-child(1)>th {
+     background-color: #FF304F; 
+   }
+  
+ 
+   ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #ffffff;
+    height: 110px ;
+    padding-right: 1cm
+}
+#nav a {color:#FF304F}
+#nav a {font-size: 25px}
+#nav a {Font-Weight: Bold}
+
+
+
+li {
+    float: right;
+    padding-right: 2cm
+    
+
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #CAC9CB;
+}
+
+.btn-secondary {
+    color: #fff;
+    background-color: #FF304F;
+    border-color: #95a5a6;
+}
+.center-div {
+    margin: 0 auto;
+    width: 100px; 
+}
+
+.dark-modal .modal-content {
+    background-color: #292b2c;
+    color: white;
+  }
+  .dark-modal .close {
+    color: white;
+  }
+  .light-blue-backdrop {
+    background-color: #5cb3fd;
+  }
+
+.alertsContainer .alertsRow.Alert Type {
+    border: 1px solid #ffc549;
+}
+.alertsContainer .alertsRow.Alert Type .iconpanel {
+    background:#ffc549;
+    color: #fff;
+}
+.alertsContainer .alertsRow.Alert Type .messagepanel {
+    color: #000;
+    background: #fff;
+}
+.alertsContainer .alertsRow.Alert Type .closeicon {
+    color: #000;
+}
+.alertsContainer .alertsRow.Alert Type .closeicon a {
+    color: #000;
+    text-decoration: none;
+    font-size: 12px;
+}

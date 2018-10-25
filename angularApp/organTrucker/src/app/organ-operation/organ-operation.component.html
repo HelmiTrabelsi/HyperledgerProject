@@ -1,0 +1,69 @@
+<html lang="en">
+<body>
+    <div>
+        <img style="margin-top: 80px;margin-left: 100px;" alt="Logo" src="../../assets/logo.png" class="pull-left"> 
+    </div>
+  <br>
+  <br>
+  <br>
+  <br>
+<div class="container">
+    <!--<h1>Changer le status de l'organe</h1>
+    <form #form="ngForm" (ngSubmit)="change_organ_state()">
+
+        <ul class="list-groupe">
+            <li class="list-groupe-item text-danger" *ngIf="ID.errors?.required && ID.touched" >ID is required </li> 
+        </ul>
+
+      <div class="form-group">
+        <label class="control-label col-md-4" for="ID">ID</label>
+        <div class="col-md-6">
+        <input ngModel  #ID="ngModel" name="ID" type="text" class="form-control" id="ID" placeholder="Id" required>
+        </div>
+      </div>
+       <div class="class col-md-4">
+      <button type="submit" class="btn btn-success" [disabled]="form.invalid" >Submit</button>
+    </div>
+    </form>-->
+
+    <h1>L'historique de l'organe</h1>
+    <form #form1="ngForm" (ngSubmit)="get_history()">
+
+        <ul class="list-groupe">
+            <li class="list-groupe-item text-danger" *ngIf="ID1.errors?.required && ID1.touched" >ID is required </li> 
+        </ul>
+
+      <div class="form-group">
+        <label class="control-label col-md-4" for="ID1">ID</label>
+        <div class="col-md-6">
+        <input ngModel  #ID1="ngModel" name="ID1" type="text" class="form-control" id="ID1" placeholder="Id" required>
+        </div>
+      </div>
+       <div class="class col-md-4">
+      <button type="submit" class="btn btn-success" [disabled]="form1.invalid" >Submit</button>
+    </div>
+    </form>
+
+    <table id="Hisory" class="table" align="center">
+
+      <tr>
+        <th>TxId</th>
+        <th>HolderHospital</th>
+        <th>LifeSpan</th>
+        <th>Type </th>
+        <th>Used</th>
+        <th>TimeStamp</th>
+      </tr>
+
+      <tr *ngFor="let Hisory1 of array">
+                 <th> {{Hisory1.txId}}</th>
+                 <th>{{Hisory1.value.HolderHospital}}</th>
+                 <th> {{Hisory1.value.LifeSpan}}</th>
+                 <th> {{Hisory1.value.Type}}</th> 
+                 <th>{{Hisory1.value.Used}}</th>
+                 <th>{{Hisory1.value.TimeStamp}}</th>
+      </tr>
+    </table>
+</div>
+</body>
+</html>

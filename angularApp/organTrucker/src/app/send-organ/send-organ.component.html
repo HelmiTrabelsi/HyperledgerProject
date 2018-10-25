@@ -1,0 +1,38 @@
+<html lang="en">
+<body>
+    <div>
+        <img style="margin-top: 80px;margin-left: 100px;" alt="Logo" src="../../assets/logo.png" class="pull-left"> 
+    </div>
+  <br>
+  <br>
+  <br>
+  <br>
+<div class="container">
+    <h1>Envoyer un organ</h1>
+    <form #form="ngForm" (ngSubmit)="send_organ()">
+
+        <ul class="list-groupe">
+            <li class="list-groupe-item text-danger" *ngIf="ID.errors?.required && ID.touched" >ID is required </li>
+            <li class="list-groupe-item text-danger" *ngIf="sendTo.errors?.required && sendTo.touched" >Type is required </li>
+            
+        </ul>
+
+      <div class="form-group">
+        <label class="control-label col-md-4" for="ID">ID</label>
+        <div class="col-md-6">
+        <input ngModel  #ID="ngModel" name="ID" type="text" class="form-control" id="ID" placeholder="Id" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-md-4" for="sendTo">Hopital receveur</label>
+        <div class="col-md-6">
+        <input ngModel  #sendTo="ngModel" name="sendTo" type="text" class="form-control" id="sendTo" placeholder="Hopital receveur"required>
+        </div>
+      </div>
+       <div class="class col-md-4">
+      <button type="submit" class="btn btn-success" [disabled]="form.invalid" >Submit</button>
+    </div>
+    </form>
+</div>
+</body>
+</html>

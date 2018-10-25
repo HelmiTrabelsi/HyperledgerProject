@@ -1,0 +1,117 @@
+<html lang="en">
+<body>
+    <div>
+        <img style="margin-top: 80px;margin-left: 100px;" alt="Logo" src="../../assets/logo.png" class="pull-left"> 
+    </div>
+    <br>
+    <br>
+    
+
+    <div class="container">
+        <h1>Ajouter un receveur</h1>
+        <form #form1="ngForm" (ngSubmit)="addReceiver()">
+    
+            <ul class="list-groupe">
+                <li class="list-groupe-item text-danger" *ngIf="key.errors?.required && key.touched" >CIN est obligatoire </li>
+                <li class="list-groupe-item text-danger" *ngIf="Poids.errors?.required && Poids.touched" >Poids est obligatoire </li>
+                <li class="list-groupe-item text-danger" *ngIf="Taille.errors?.required && Taille.touched" >Taille est obligatoire </li>
+                <li class="list-groupe-item text-danger" *ngIf="GroupeABO.errors?.required && GroupeABO.touched" >GroupeABO est obligatoire </li>
+                <li class="list-groupe-item text-danger" *ngIf="StatusVirologique.errors?.required && StatusVirologique.touched" >Status Virologique est obligatoire </li>
+                <li class="list-groupe-item text-danger" *ngIf="DegreDurgence.errors?.required && DegreDurgence.touched" >Degré D'urgence est obligatoire </li>
+                <li class="list-groupe-item text-danger" *ngIf="HLA.errors?.required && HLA.touched" >HLA est obligatoire </li>
+                <li class="list-groupe-item text-danger" *ngIf="OrganDemande.errors?.required && OrganDemande.touched" >Organ Demandé est obligatoire </li>
+            </ul>
+    
+          <div class="form-group">
+            <label class="control-label col-md-4" for="key">CIN</label>
+            <div class="col-md-6">
+            <input ngModel  #key="ngModel" name="key" type="text" class="form-control" id="key" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-4" for="Poids">Poids</label>
+            <div class="col-md-6">
+            <input ngModel  #Poids="ngModel" name="Poids" type="text" class="form-control" id="Poids" required>
+            </div>
+          </div>
+    
+          <div class="form-group">
+              <label class="control-label col-md-4" for="Taille">Taille</label>
+              <div class="col-md-6">
+              <input ngModel  #Taille="ngModel" name="Taille" type="text" class="form-control" id="Taille" required>
+            </div>
+          </div>
+            <div class="form-group">
+                <label class="control-label col-md-4" for="GroupeABO">GroupeABO</label>
+                <div class="col-md-6">
+                <select   ngModel  #GroupeABO="ngModel" name="GroupeABO" type="text" class="form-control" id="GroupeABO" required>
+                  <option *ngFor="let pow3 of Groupes" [value]="pow3">{{pow3}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-4" for="StatusVirologique">StatusVirologique</label>
+                <div class="col-md-6">
+                <select  ngModel  #StatusVirologique="ngModel" name="StatusVirologique" type="text" class="form-control" id="StatusVirologique" required>
+                  <option *ngFor="let pow of Virs" [value]="pow">{{pow}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-4" for="DegreDurgence">DegreDurgence</label>
+                <div class="col-md-6">
+                <select  ngModel  #DegreDurgence="ngModel" name="DegreDurgence" type="text" class="form-control" id="DegreDurgence" required>
+                  <option *ngFor="let pow4 of Degre" [value]="pow4">{{pow4}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-4" for="HLA">HLA</label>
+                <div class="col-md-6">
+                <select  ngModel  #HLA="ngModel" name="HLA" type="text" class="form-control" id="HLA" required>
+                  <option *ngFor="let pow1 of HLAs" [value]="pow1">{{pow1}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-4" for="OrganDemande">OrganDemande</label>
+                <div class="col-md-6">
+                <select  ngModel  #OrganDemande="ngModel" name="OrganDemande" type="text" class="form-control" id="OrganDemande" required>
+                  <option *ngFor="let pow2 of Types" [value]="pow2">{{pow2}}</option>
+                </select>
+              </div>
+            </div>
+           <div class="class col-md-4">
+          <button type="submit" class="btn btn-success" [disabled]="form1.invalid" >Submit</button>
+        </div>
+        </form>
+    </div>
+   
+  <br>
+  <br>
+  <br>
+  <br>
+<!--<div class="container">
+    <h1>Changer le status du receveur</h1>
+    <form #form="ngForm" (ngSubmit)="change_receiver_state()">
+
+        <ul class="list-groupe">
+            <li class="list-groupe-item text-danger" *ngIf="ID.errors?.required && ID.touched" >ID est obligatoire </li> 
+        </ul>
+
+      <div class="form-group">
+        <label class="control-label col-md-4" for="ID">ID</label>
+        <div class="col-md-6">
+        <input ngModel  #ID="ngModel" name="ID" type="text" class="form-control" id="ID" placeholder="Id" required>
+        </div>
+      </div>
+       <div class="class col-md-4">
+      <button type="submit" class="btn btn-success" [disabled]="form.invalid" >Submit</button>
+    </div>
+    </form>
+
+   
+</div>-->
+</body>
+</html>
+

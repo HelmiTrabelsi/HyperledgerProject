@@ -1,0 +1,43 @@
+
+<div>
+  <img style="margin-top: 80px;margin-left: 100px;" alt="Logo" src="../../assets/logo.png" class="pull-left"> 
+</div>
+<br>
+<br>
+<div class="container">
+  <h1>Ajouter un Hopital</h1>
+  <form #form="ngForm" (ngSubmit)="addHospital()">
+
+     <!-- <ul class="list-groupe">
+          <li class="list-groupe-item text-danger" *ngIf="ID.errors?.required && ID.touched" >id est obligatoire </li>
+          <li class="list-groupe-item text-danger" *ngIf="Type.errors?.required && Type.touched" >Type est obligatoire </li>
+          <li class="list-groupe-item text-danger" *ngIf="GroupeABO.errors?.required && GroupeABO.touched" >GroupeABO est obligatoire </li>
+      </ul>-->
+
+    <div class="form-group">
+      <label class="control-label col-md-4" for="ID">Nom de l'hopitale</label>
+      <div class="col-md-6">
+      <input ngModel  #ID="ngModel" name="ID" type="text" class="form-control" id="ID" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-4" for="HolderHospital">Password</label>
+      <div class="col-md-6">
+      <input ngModel  #HolderHospital="ngModel" name="HolderHospital" type="password" class="form-control" id="HolderHospital" required>
+      </div>
+    </div>
+     
+    <div class="form-group">
+      <label class="control-label col-md-4" for="GroupeABO">Ville</label>
+      <div class="col-md-6">
+      <select ngModel  #GroupeABO="ngModel" name="GroupeABO" type="text" class="form-control" id="GroupeABO" required>
+        <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+      </select>
+    </div>
+  </div>
+     <div class="class col-md-4">
+    <button type="submit" class="btn btn-success" [disabled]="form.invalid" >Submit</button>
+  </div>
+  </form>
+</div>
+

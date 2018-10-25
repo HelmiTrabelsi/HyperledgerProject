@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+<body>
+   
+    
+    <table id="all_receiver" class="table" align="center">
+
+        <tr>
+          <th>CIN</th>
+          <th>DateAjout</th>
+          <th>DegreDurgence</th>
+          <th>GroupeABO </th>
+          <th>HLA</th>
+          <th>organDemande</th>
+          <th>Poids</th>
+          <th>StatusVirologique</th>
+          <th>Taille</th>
+          <th>State</th>
+        </tr>
+
+        <tr *ngFor="let receiver of array">
+                   <th> {{receiver.Key}}</th>
+                   <th>{{receiver.DateAjout}}</th>
+                   <th> {{receiver.DegreDurgence}}</th>
+                   <th> {{receiver.GroupeABO}}</th> 
+                   <th>{{receiver.HLA}}</th>
+                   <th>{{receiver.OrganDemande}}</th>
+                   <th>{{receiver.Poids}}</th>
+                   <th>{{receiver.StatusVirologique}}</th>
+                   <th>{{receiver.Taille}}</th>
+                   <th>{{receiver.State}}</th>
+        </tr>
+      </table>
+
+      <input id="str1" placeholder="ID"/>
+      <button type="button" class="btn btn-secondary" on-click="getreceiver()">getReceiver</button>
+       {{receiver.CIN}}
+      {{receiver.DateAjout}}
+      {{receiver.DegreDurgence}}
+       {{receiver.GroupeABO}}
+      {{receiver.HLA}}
+      {{receiver.OrganDemande}}
+      {{receiver.Poids}}
+      {{receiver.StatusVirologique}}
+      {{receiver.Taille}}
+</body>
+</html>
+

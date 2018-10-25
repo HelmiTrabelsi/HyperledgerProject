@@ -1,0 +1,198 @@
+<ul id="nav">
+        <br>
+        <img style="margin-top: -6px;margin-left: 40px;" alt="Logo" src="../../assets/logo.png" class="pull-left">
+        <li><a class="active" [routerLink]="['/organOperation']" >Historique d'organe</a></li>
+        <li><a [routerLink]="['/receiverOperation']">Ajouter un receveur</a></li>
+      
+      </ul>
+         
+      <ui-carousel [infinite]="true" [fade]="false" [speed]="200" height="500px" width="100%">
+        <ui-carousel-item>
+            <img src="../../assets/slide1.jpg" alt="company logo" style="width: 100%;">
+        </ui-carousel-item>
+        <ui-carousel-item>
+            <img src="../../assets/slide2.jpg" alt="company logo" style="width: 100%;">
+        </ui-carousel-item>
+        <ui-carousel-item>
+            <img src="../../assets/slide3.jpg" alt="company logo" style="width: 100%;">
+        </ui-carousel-item>
+     
+      
+    </ui-carousel>
+    <br>
+    <br> 
+       <div class="container"  > 
+          <h2>Liste des Receveurs</h2>
+        <table id="all_Receiver" class="table table-striped"  >
+    
+            <tr>
+              <th>key</th>
+              <th>Taille</th>
+              <th>Poids</th>
+              <th>GroupeABO </th>
+              <th>DegreDurgence</th>
+              <th>HLA</th>
+              <th>OrganDemande</th>
+              <th>Status</th>
+              <th>StatusVirologique</th>
+              <th>DateAjout</th>
+              
+            </tr>
+    
+            <tr *ngFor="let Receiver of array">
+                       <th> {{Receiver.Key}}</th>
+                       <th>{{Receiver.Taille}}</th>
+                       <th> {{Receiver.Poids}}</th>
+                       <th> {{Receiver.GroupeABO}}</th> 
+                       <th>{{Receiver.DegreDurgence}}</th>
+                       <th>{{Receiver.HLA}}</th>
+                       <th>{{Receiver.OrganDemande}}</th>
+                       <th>{{Receiver.State}}</th>
+                       <th>{{Receiver.StatusVirologique}}</th>
+                       <th>{{Receiver.DateAjout}}</th>
+                       
+
+                       
+            </tr>
+          </table>
+          <br>
+          <br>
+          <h2>Rechercher un Receveur</h2>
+          <div style="text-align: center" >  
+          <input id="str" placeholder="Enter l'identifiant de l'Receivere" class="form-control"/>
+          <br>
+          <button type="button" class="btn btn-secondary" on-click="getReceiver()">Trouver le receveur</button>
+          
+          </div>      
+          <br>
+        <table id="all_Receiver" class="table table-striped"  >
+    
+            <tr>
+              <th>attribut</th>
+              <th>valeur</th>
+            </tr>
+    
+            <tr >
+                       <th>Taille</th>
+                       <th>{{Receiver1.Taille}}</th>
+                      
+            </tr>
+            <tr >
+                <th>Poids</th>
+                <th> {{Receiver1.Poids}}</th>  
+            </tr>
+     <tr >
+        <th>GroupeABO</th>
+        <th> {{Receiver1.GroupeABO}}</th>  
+    </tr>
+    <tr >
+        <th>Degré Durgence</th>
+        <th> {{Receiver1.DegreDurgence}}</th>  
+    </tr>
+    <tr >
+        <th>HLA</th>
+        <th> {{Receiver1.HLA}}</th>  
+    </tr>
+    <tr >
+        <th>Organ Demandé</th>
+        <th> {{Receiver1.OrganDemande}}</th>  
+    </tr>
+    <tr >
+        <th>Status</th>
+        <th> {{Receiver1.State}}</th>  
+    </tr>
+    <tr >
+        <th>Status Virologique</th>
+        <th> {{Receiver1.StatusVirologique}}</th>  
+    </tr>
+    <tr >
+        <th>Date d'jout</th>
+        <th> {{Receiver1.DateAjout}}</th>  
+    </tr>
+          </table>
+        
+     </div>
+
+     <div class="container" > 
+            <h2>Liste des organes</h2>
+          <table id="all_organ" class="table table-striped"  >
+      
+              <tr>
+                <th>key</th>
+                <th>Hopital</th>
+                <th>Durée de vie</th>
+                <th>Type </th>
+                <th>Status</th>
+                <th>Date d'ajout</th>
+                <th>HLA</th>
+                <th>GroupeABO</th>
+                
+              </tr>
+      
+              <tr *ngFor="let organ of array1">
+                         <th> {{organ.Key}}</th>
+                         <th>{{organ.HolderHospital}}</th>
+                         <th> {{organ.LifeSpan}}</th>
+                         <th> {{organ.type}}</th> 
+                         <th>{{organ.used}}</th>
+                         <th>{{organ.timestamp}}</th>
+                         <th>{{organ.HLA}}</th>
+                         <th>{{organ.GroupeABO}}</th>
+                         
+              </tr>
+            </table>
+            <br>
+            <br>
+            <h2>Rechercher un organe</h2>
+            <div style="text-align: center" >  
+            <input id="str1" placeholder="Enter l'identifiant de l'organe" class="form-control"/>
+            <br>
+            <button type="button" class="btn btn-secondary" on-click="getOrgan()">Trouver l'organe</button>
+            
+            </div>      
+            <br>
+          <table id="all_organ" class="table table-striped"  >
+      
+              <tr>
+                <th>attribut</th>
+                <th>valeur</th>
+              </tr>
+      
+              <tr >
+                         <th>Hopital</th>
+                         <th>{{this.organ1.HolderHospital}}</th>
+                        
+              </tr>
+              <tr >
+                  <th>Durée de vie</th>
+                  <th> {{organ1.LifeSpan}}</th>  
+              </tr>
+       <tr >
+          <th>Type</th>
+          <th> {{organ1.Type}}</th>  
+      </tr>
+      <tr >
+          <th>Status</th>
+          <th> {{organ1.Used}}</th>  
+      </tr>
+      <tr >
+          <th>Date d'ajout</th>
+          <th> {{organ1.TimeStamp}}</th>  
+      </tr>
+      <tr >
+        <th>HLA</th>
+        <th> {{organ1.HLA}}</th>  
+    </tr>
+    <tr >
+        <th>GroupeABO</th>
+        <th> {{organ1.GroupeABO}}</th>  
+    </tr>
+            </table>
+          
+       </div>
+
+  
+   
+
+       <!--<button id="matching" on-click="matching()">Matching</button>-->
+      
