@@ -19,3 +19,6 @@ cd OrganTrucker/LFS171x/fabric-material/tuna-app
  ```
   ng serve
  ```
+ ...
+ go to http://localhost:4200/Login
+ ...
